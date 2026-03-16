@@ -34,7 +34,7 @@ XSSFWorkbook workbook = new XSSFWorkbook(fis)
 def sheet = workbook.getSheetAt(0)
 DataFormatter formatter = new DataFormatter()
 
-// Store all data rows in a list (skip header)
+// Store all data rows in a list
 List<Map<String, String>> excelRows = []
 for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
     def row = sheet.getRow(rowNum)

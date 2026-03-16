@@ -60,13 +60,13 @@ excelDates.eachWithIndex { d, i ->
 
 
 // Validate ALL Excel DATE formats are mm/dd/yyyy hh:mm:ss
-String datePattern = /^\d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2}$/
+String datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/\d{4} ([01]\d|2[0-3]):[0-5]\d:[0-5]\d$/
 
 excelDates.eachWithIndex { d, i ->
 	if (d ==~ datePattern) {
 		WebUI.comment(" Row ${i + 1} Excel DATE format VALID: [" + d + "]")
 	} else {
-		WebUI.comment(" Row ${i + 1} Excel DATE format INVALID: [" + d + "]")
+		WebUI.comment(" Row ${i + 1} Excel DATE format INVALID: [" + d + "]",)
 		assert false, "Row ${i + 1} DATE in Excel does not match mm/dd/yyyy hh:mm:ss — Actual: [" + d + "]"
 	}
 }
