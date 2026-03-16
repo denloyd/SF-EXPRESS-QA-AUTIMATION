@@ -147,9 +147,9 @@ WebUI.verifyEqual(test2ShowsOracleError, false, FailureHandling.CONTINUE_ON_FAIL
 
 WebUI.comment('TEST 2 — HAWB exceeds DB limit (50 chars):')
 WebUI.comment(test2ShowsOracleError
-	? 'FAILED: Upon saving, system rejects sa uploaded file but it displays incorrect error message'
+	? 'FAILED: Upon saving, system rejects the uploaded file but it displays incorrect error message'
 	: test2SaveSuccess
-		? 'FAILED: Upon saving, system rejects sa uploaded file but it displays incorrect error message'
+		? 'FAILED: Upon saving, system rejects the uploaded file but it displays incorrect error message'
 		: ' PASS: System rejected with proper message')
 
 WebUI.delay(5)
