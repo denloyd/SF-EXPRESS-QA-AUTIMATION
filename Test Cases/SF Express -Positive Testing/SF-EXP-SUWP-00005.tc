@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that the data from the uploaded Excel file is saved in the correct database table after clicking the Save button.</description>
+   <name>SF-EXP-SUWP-00005</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>8f6da54a-f479-41ba-aa8c-1aec8168f5f2</testCaseGuid>
+</TestCaseEntity>

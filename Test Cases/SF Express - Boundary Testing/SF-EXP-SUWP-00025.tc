@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that the system rejects the file when the HAWB value exceeds the maximum allowed length upon uploading.</description>
+   <name>SF-EXP-SUWP-00025</name>
+   <tag></tag>
+   <comment></comment>
+   <origin>WEB_RECORDER</origin>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>8a9a09d2-012e-4e72-af4e-25cd6f1b1403</testCaseGuid>
+</TestCaseEntity>

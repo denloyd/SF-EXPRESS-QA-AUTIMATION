@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify the system accepts a valid EVENT_CODE and its corresponding REASON_CODE based on the reference list value.</description>
+   <name>SF-EXP-SUWP-00010</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e620bb7f-b9d5-40e9-b892-5f823d0fbad9</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that the system rejects the file when the Event Code value exceeds the maximum allowed length upon saving.</description>
+   <name>SF-EXP-SUWP-00028</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>687c56bf-3efb-4e83-87db-2e6f61098286</testCaseGuid>
+</TestCaseEntity>

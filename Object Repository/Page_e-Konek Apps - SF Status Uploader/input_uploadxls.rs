@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_uploadxls</name>
+   <tag></tag>
+   <elementGuidId>ef76826b-3669-4de9-8a80-fd7a7c489674</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>#uploadxls</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id = 'uploadxls' and @type = 'file']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id = 'uploadxls']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>#uploadxls</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>f02ea613-541c-47bd-bd3a-1e7820cfb517</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>uploadxls</value>
+      <webElementGuid>5ae9cbdc-cbe5-4eed-a1f5-2e41a25407e9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>hidden</value>
+      <webElementGuid>9c352831-5db5-44b0-9cb9-c3a44215f2f6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>accept</name>
+      <type>Main</type>
+      <value>.xls, .xlsx</value>
+      <webElementGuid>01fb6ef2-c10d-484d-8400-319691db781f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>file</value>
+      <webElementGuid>d9f8888f-448a-4cfd-8b94-d90283bc76c0</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-6265311691af0160f3b4d330ad4b3361</value>
+      <webElementGuid>4e4da24b-10c8-4f09-924c-e61d765436c6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id = 'uploadxls']</value>
+      <webElementGuid>4f87ef8f-a62f-4510-8ef8-72d0e9e0ded9</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@id = 'uploadxls']</value>
+      <webElementGuid>f0c1f666-02d2-4a91-86b4-142b8ce4a609</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//input[@id = 'uploadxls' and @type = 'file']</value>
+      <webElementGuid>1ebd2b7f-efa2-43de-9bc5-2493c91500f5</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

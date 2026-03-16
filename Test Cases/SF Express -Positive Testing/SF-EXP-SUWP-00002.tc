@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify the system successfully uploads  a file with 1 valid row data (valid HAWB, valid EVENT_CODE, valid REASON_CODE, valid DATE).</description>
+   <name>SF-EXP-SUWP-00002</name>
+   <tag></tag>
+   <comment></comment>
+   <origin>WEB_RECORDER</origin>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>cd1ed345-53aa-429b-9c65-bfd980dd392f</testCaseGuid>
+</TestCaseEntity>

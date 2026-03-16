@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify the system accepts a valid DATE in format mm/dd/yyyy hh:mm:ss</description>
+   <name>SF-EXP-SUWP-00004</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>73363bbc-c093-49fb-ae4c-5a612a0e0580</testCaseGuid>
+</TestCaseEntity>

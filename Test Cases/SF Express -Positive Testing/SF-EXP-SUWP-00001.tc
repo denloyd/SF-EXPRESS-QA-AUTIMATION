@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify the system accepts upload when the Excel file has the correct columns (HAWB, EVENT_CODE, REASON_CODE, DATE).</description>
+   <name>SF-EXP-SUWP-00001</name>
+   <tag></tag>
+   <comment></comment>
+   <origin>WEB_RECORDER</origin>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0b6e937f-4ee1-4de1-82fb-1f9e8b92633e</testCaseGuid>
+</TestCaseEntity>

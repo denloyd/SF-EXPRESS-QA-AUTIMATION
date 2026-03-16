@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify the UI follows the request enhancement DATE format requirement mm/dd/yyyy hh:mm:ss (e.g., 01/09/2024 02:27:09) by uploading a XLS file with a valid DATE value and confirming the UI accepts the format without displaying an invalid date/date format error.</description>
+   <name>SF-EXP-SUWP-00035</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>6050ad86-5821-4086-9add-ad7aac83e0f9</testCaseGuid>
+</TestCaseEntity>

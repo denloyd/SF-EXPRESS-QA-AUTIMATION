@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that the system rejects the file when the Reason Code value exceeds the maximum allowed length upon saving.</description>
+   <name>SF-EXP-SUWP-00030</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>dcc07c3c-fe74-404f-a44c-016cd25b8649</testCaseGuid>
+</TestCaseEntity>

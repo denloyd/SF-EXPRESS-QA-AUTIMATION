@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify the system successfully uploads a file with multiple valid rows eg. 10 rows</description>
+   <name>SF-EXP-SUWP-00003</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>434e4877-af71-4e8a-9418-b22acc44f722</testCaseGuid>
+</TestCaseEntity>

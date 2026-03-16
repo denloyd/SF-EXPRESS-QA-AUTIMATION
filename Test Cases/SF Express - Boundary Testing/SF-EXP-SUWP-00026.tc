@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that the system rejects the file when the HAWB value exceeds the maximum allowed length upon saving.&#xd;
+&#xd;
+	First test: The system will test the maximum length based on the 			    enhancement requirement.&#xd;
+&#xd;
+	Second test: The system will test the maximum length based on the 				   		   current maximum length in the database.</description>
+   <name>SF-EXP-SUWP-00026</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>423fef60-87aa-4f19-9222-4da5a565c0be</testCaseGuid>
+</TestCaseEntity>

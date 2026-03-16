@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_DATE</name>
+   <tag></tag>
+   <elementGuidId>2be2f72a-1410-4037-902d-4a426cebb7ec</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>.sc-ipEzrc:nth-child(4) .sc-eDVOW</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' sc-ipEzrc ') and (position() = 4)]//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' sc-eDVOW ')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>9b736a4c-c71f-46e5-bfc3-1b90a01e104e</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>data-column-id</name>
+      <type>Main</type>
+      <value>4</value>
+      <webElementGuid>191c4f87-4d0f-4492-9331-0b92cd76645b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>sc-eDVOW ftzeFU</value>
+      <webElementGuid>398f587e-e5f2-46c5-9371-d0bfbe56132e</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>DATE</value>
+      <webElementGuid>fbe20e49-b2cb-4f9f-93c3-b1af27268667</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>parent</name>
+      <type>Main</type>
+      <value>md5.v1-f2ea5b6f74d171dbc4b4e2417958315c</value>
+      <webElementGuid>0ef0de48-6d79-4ab2-bc9a-3cf869538670</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' sc-ipEzrc ') and (position() = 4)]//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' sc-eDVOW ')]</value>
+      <webElementGuid>b7e45658-5a7e-461f-8fcc-580b7b384309</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' sc-ipEzrc ') and (position() = 4)]//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' sc-eDVOW ')]</value>
+      <webElementGuid>c414f1cc-80c5-4130-a039-8bcc5a9cd81f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'DATE' or . = 'DATE')]</value>
+      <webElementGuid>0ec0e39c-4c7b-4ae4-b1ec-73b953aebc0d</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

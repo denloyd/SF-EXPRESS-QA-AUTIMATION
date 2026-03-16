@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that the system rejects the file when the Event Code value exceeds the maximum allowed length upon uploading.</description>
+   <name>SF-EXP-SUWP-00027</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0459096e-ec8f-45a6-a252-ea5e0c8b3253</testCaseGuid>
+</TestCaseEntity>
