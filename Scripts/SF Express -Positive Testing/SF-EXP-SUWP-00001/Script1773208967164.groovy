@@ -19,8 +19,11 @@ import org.openqa.selenium.Keys as Keys
 
 import java.awt.Robot
 import java.awt.event.KeyEvent
+import com.kms.katalon.core.configuration.RunConfiguration
 
-String filePath = 'C:\\Users\\denlo\\OneDrive\\Desktop\\OJT Tasks\\OJT related tasks\\OJT MANUAL TESTING\\SF CHI\\SF-EXP-SUWP-00001.xlsx'
+
+
+String filePath = RunConfiguration.getProjectDir() + '/Data Files/SF-EXP-SUWP-00001.xlsx'
 
 
 WebUI.openBrowser('')
@@ -28,9 +31,9 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('https://sf.ekonek.com/login')
 
-WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), 'NMM_User')
+WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), GlobalVariable.Username)
 
-WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), 'IMrpfjBbSL8n+osp8It7RQ==')
+WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), GlobalVariable.Password)
 
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Login'))
 
@@ -47,12 +50,11 @@ WebUI.uploadFile(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_up
 
 WebUI.comment("Excel file uploaded")
 
-WebUI.delay(3)
 
 WebUI.waitForElementVisible(findTestObject('Page_e-Konek Apps - SF Status Uploader/div_HAWB'), 10)
 
 
-// Verify each header with a clear failure message
+// Verify each header
 try {
 	WebUI.verifyElementText(findTestObject('Page_e-Konek Apps - SF Status Uploader/div_HAWB'), 'HAWB')
 	WebUI.comment(" HAWB column header verified")

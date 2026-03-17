@@ -23,29 +23,32 @@ import java.io.FileInputStream
 import java.awt.Robot
 import java.awt.event.KeyEvent
 
-String filePath = 'C:\\Users\\denlo\\OneDrive\\Desktop\\OJT Tasks\\OJT related tasks\\OJT MANUAL TESTING\\SF CHI\\SF-EXP-SUWP-00027.xlsx'
+import com.kms.katalon.core.configuration.RunConfiguration
+
+String filePath = RunConfiguration.getProjectDir() + '/Data Files/SF-EXP-SUWP-00026.xlsx'
 
 
-// Read ALL EVENT_CODE values from Excel BEFORE uploading
+
+// Read ALL HAWB values from Excel BEFORE uploading
 FileInputStream fis = new FileInputStream(filePath)
 XSSFWorkbook workbook = new XSSFWorkbook(fis)
 def sheet = workbook.getSheetAt(0)
 DataFormatter formatter = new DataFormatter()
 
-// store EVENT_CODE
+// Store all HAWB values
 List<Map<String, String>> excelRows = []
 for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
 	def row = sheet.getRow(rowNum)
 	if (row == null) continue
 
-	def eventCodeCell = row.getCell(1)  
-	if (eventCodeCell == null) continue
-	String eventCodeValue = formatter.formatCellValue(eventCodeCell).trim()
-	if (eventCodeValue.isEmpty()) continue
+	def hawbCell = row.getCell(0)
+	if (hawbCell == null) continue
+	String hawbValue = formatter.formatCellValue(hawbCell).trim()
+	if (hawbValue.isEmpty()) continue
 
 	excelRows.add([
-		eventCode : eventCodeValue,
-		rowNum    : String.valueOf(rowNum + 1)
+		hawb    : hawbValue,
+		rowNum  : String.valueOf(rowNum + 1)  
 	])
 }
 
@@ -55,42 +58,41 @@ fis.close()
 WebUI.comment("Total rows read from Excel: " + excelRows.size())
 
 
-// Check ALL EVENT_CODE values against max length
-int MAX_EVENTCODE_LENGTH = 7  
-
-boolean hasInvalidEventCode = false
+// Check ALL HAWB values against max length
+int MAX_HAWB_LENGTH = 20  
+boolean hasInvalidHAWB = false
 
 excelRows.eachWithIndex { row, i ->
-	int eventCodeLength = row.eventCode.length()
-	WebUI.comment("Row ${i + 1} — EVENT_CODE: [" + row.eventCode + "] | Length: " + eventCodeLength + " | Max: " + MAX_EVENTCODE_LENGTH)
+	int hawbLength = row.hawb.length()
+	WebUI.comment("Row ${i + 1} — HAWB: [" + row.hawb + "] | Length: " + hawbLength + " | Max: " + MAX_HAWB_LENGTH)
 
-	if (eventCodeLength > MAX_EVENTCODE_LENGTH) {
-		WebUI.comment(" Row ${i + 1} EVENT_CODE EXCEEDS max length — [" + row.eventCode + "] is " + eventCodeLength + " characters (exceeds by " + (eventCodeLength - MAX_EVENTCODE_LENGTH) + ")")
-		hasInvalidEventCode = true
+	if (hawbLength > MAX_HAWB_LENGTH) {
+		WebUI.comment(" Row ${i + 1} HAWB EXCEEDS max length — [" + row.hawb + "] is " + hawbLength + " characters (exceeds by " + (hawbLength - MAX_HAWB_LENGTH) + ")")
+		hasInvalidHAWB = true
 	} else {
-		WebUI.comment(" Row ${i + 1} EVENT_CODE length is valid — [" + row.eventCode + "] is " + eventCodeLength + " characters")
+		WebUI.comment(" Row ${i + 1} HAWB length is valid — [" + row.hawb + "] is " + hawbLength + " characters")
 	}
 }
 
-if (!hasInvalidEventCode) {
-	WebUI.comment(" WRONG TEST DATA — No EVENT_CODE exceeds max length of " + MAX_EVENTCODE_LENGTH + ". Use a file with at least one EVENT_CODE longer than " + MAX_EVENTCODE_LENGTH + " characters")
-	assert false, "Wrong test file — no EVENT_CODE exceeds maximum length of " + MAX_EVENTCODE_LENGTH
+if (!hasInvalidHAWB) {
+	WebUI.comment(" WRONG TEST DATA — No HAWB exceeds max length of " + MAX_HAWB_LENGTH + ". Use a file with at least one HAWB longer than " + MAX_HAWB_LENGTH + " characters")
+	assert false, "Wrong test file — no HAWB exceeds maximum length of " + MAX_HAWB_LENGTH
 }
-
-
 
 // Login
 WebUI.openBrowser('')
 WebUI.maximizeWindow()
 WebUI.navigateToUrl('https://sf.ekonek.com/login')
 
-WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), 'NMM_User')
-WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), 'IMrpfjBbSL8n+osp8It7RQ==')
+WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), GlobalVariable.Username)
+
+WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), GlobalVariable.Password)
+
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Login'))
 
 
 
-// Upload Excel file
+//  Upload Excel file
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Upload XLS'))
 
 Robot robot = new Robot()
@@ -100,10 +102,10 @@ robot.keyRelease(KeyEvent.VK_ESCAPE)
 
 WebUI.uploadFile(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_uploadxls'), filePath)
 WebUI.comment(" File uploaded — " + excelRows.size() + " rows")
-WebUI.delay(3)
 
 
-// Check system behavior 
+
+// Check system UI location
 def dynamicXPath = { String xpath ->
 	TestObject to = new TestObject()
 	to.addProperty('xpath', ConditionType.EQUALS, xpath)
@@ -115,23 +117,21 @@ boolean systemAccepted = WebUI.waitForElementVisible(
 
 if (systemAccepted) {
 	
-	WebUI.comment(" ROWS WITH INVALID EVENT_CODE ")
+	WebUI.comment(" ROWS WITH INVALID HAWB ")
 
 	// Show ALL rows that exceeded max length
 	excelRows.eachWithIndex { row, i ->
-		if (row.eventCode.length() > MAX_EVENTCODE_LENGTH) {
-			
-			String actualEventCode = WebUI.getText(dynamicXPath("//div[@id='row-${i}']//div[@data-column-id='2']"))
-			WebUI.comment(" Row ${i + 1} — EVENT_CODE: [" + actualEventCode + "] | Length: " + actualEventCode.length() + " | Exceeds by: " + (actualEventCode.length() - MAX_EVENTCODE_LENGTH) + " character(s)")
+		if (row.hawb.length() > MAX_HAWB_LENGTH) {
+			String actualHAWB = WebUI.getText(dynamicXPath("//div[@id='row-${i}']//div[@data-column-id='1']"))
+			WebUI.comment(" Row ${i + 1} — HAWB: [" + actualHAWB + "] | Length: " + actualHAWB.length() + " | Exceeds by: " + (actualHAWB.length() - MAX_HAWB_LENGTH) + " character(s)")
 		}
 	}
+	WebUI.comment(" System accepts the file even HAWB exceeds its  maximum length of " + MAX_HAWB_LENGTH + " upon uploading")
 
-	WebUI.comment("System accepts the uploaded file even the EVENT_CODE exceeds its maximum length of " + MAX_EVENTCODE_LENGTH + " upon uploading")
-
-	assert false, "TEST FAILED: System accepted file containing EVENT_CODE exceeding max length of " + MAX_EVENTCODE_LENGTH
+	assert false, "TEST FAILED: System accepted file containing HAWB(s) exceeding max length of " + MAX_HAWB_LENGTH
 
 } else {
 	WebUI.comment(" System correctly REJECTED the file")
 	WebUI.comment(" Data was NOT displayed in the table")
-	WebUI.comment(" TEST PASSED — System rejects file with EVENT_CODE exceeding max length of " + MAX_EVENTCODE_LENGTH)
+	WebUI.comment(" TEST PASSED — System rejects file with HAWB exceeding max length of " + MAX_HAWB_LENGTH)
 }

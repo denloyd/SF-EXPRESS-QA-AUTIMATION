@@ -23,7 +23,9 @@ import java.io.FileInputStream
 import java.awt.Robot
 import java.awt.event.KeyEvent
 
-String filePath = 'C:\\Users\\denlo\\OneDrive\\Desktop\\OJT Tasks\\OJT related tasks\\OJT MANUAL TESTING\\SF CHI\\SF-EXP-SUWP-00029.xlsx'
+import com.kms.katalon.core.configuration.RunConfiguration
+
+String filePath = RunConfiguration.getProjectDir() + '/Data Files/SF-EXP-SUWP-00030.xlsx'
 
 
 // Read ALL REASON_CODE values from Excel BEFORE uploading
@@ -84,8 +86,10 @@ WebUI.openBrowser('')
 WebUI.maximizeWindow()
 WebUI.navigateToUrl('https://sf.ekonek.com/login')
 
-WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), 'NMM_User')
-WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), 'IMrpfjBbSL8n+osp8It7RQ==')
+WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), GlobalVariable.Username)
+
+WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), GlobalVariable.Password)
+
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Login'))
 
 

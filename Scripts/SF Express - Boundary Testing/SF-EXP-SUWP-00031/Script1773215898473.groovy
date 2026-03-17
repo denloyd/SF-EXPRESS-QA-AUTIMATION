@@ -20,7 +20,9 @@ import org.openqa.selenium.Keys as Keys
 import java.awt.Robot
 import java.awt.event.KeyEvent
 
-String filePath = 'C:\\Users\\denlo\\OneDrive\\Desktop\\OJT Tasks\\OJT related tasks\\OJT MANUAL TESTING\\SF CHI\\SF-EXP-SUWP-00030.xlsx'
+import com.kms.katalon.core.configuration.RunConfiguration
+
+String filePath = RunConfiguration.getProjectDir() + '/Data Files/SF-EXP-SUWP-00031.xlsx'
 
 
 WebUI.openBrowser('')
@@ -28,11 +30,12 @@ WebUI.maximizeWindow()
 WebUI.navigateToUrl('https://sf.ekonek.com/login')
 
 // Login
-WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), 'NMM_User')
-WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'))
-WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), 'IMrpfjBbSL8n+osp8It7RQ==')
+WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), GlobalVariable.Username)
+
+WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), GlobalVariable.Password)
+
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Login'))
-WebUI.delay(3)
+WebUI.waitForElementClickable(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Upload XLS'), 10)
 
 // Upload file
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Upload XLS'))
@@ -41,11 +44,12 @@ robot.delay(1000)
 robot.keyPress(KeyEvent.VK_ESCAPE)
 robot.keyRelease(KeyEvent.VK_ESCAPE)
 WebUI.uploadFile(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_uploadxls'), filePath)
-WebUI.delay(3)
+WebUI.waitForElementClickable(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Save'), 10)
+
 
 // Click Save
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Save'))
-WebUI.delay(2)
+
 
 // Read the actual error message from the popup
 TestObject popupMessage = new TestObject('popupMessage')

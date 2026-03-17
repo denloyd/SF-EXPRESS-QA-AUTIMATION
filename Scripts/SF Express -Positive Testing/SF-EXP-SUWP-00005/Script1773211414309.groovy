@@ -23,7 +23,9 @@ import java.io.FileInputStream
 import java.awt.Robot
 import java.awt.event.KeyEvent
 
-String filePath = 'C:\\Users\\denlo\\OneDrive\\Desktop\\OJT Tasks\\OJT related tasks\\OJT MANUAL TESTING\\SF CHI\\SF-EXP-SUWP-00005.xlsx'
+import com.kms.katalon.core.configuration.RunConfiguration
+
+String filePath = RunConfiguration.getProjectDir() + '/Data Files/SF-EXP-SUWP-00005.xlsx'
 
 
 // Read Excel data BEFORE uploading
@@ -67,8 +69,10 @@ WebUI.openBrowser('')
 WebUI.maximizeWindow()
 WebUI.navigateToUrl('https://sf.ekonek.com/login')
 
-WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), 'NMM_User')
-WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), 'IMrpfjBbSL8n+osp8It7RQ==')
+WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), GlobalVariable.Username)
+
+WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), GlobalVariable.Password)
+
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Login'))
 
 
@@ -82,7 +86,7 @@ robot.keyRelease(KeyEvent.VK_ESCAPE)
 
 WebUI.uploadFile(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_uploadxls'), filePath)
 WebUI.comment(" Excel file uploaded — " + excelRows.size() + " rows")
-WebUI.delay(3)
+WebUI.waitForElementClickable(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Save'), 10)
 
 
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Save'))

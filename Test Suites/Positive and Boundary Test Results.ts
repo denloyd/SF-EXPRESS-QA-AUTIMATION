@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Positive and Boundary Testing</name>
+   <name>Positive and Boundary Test Results</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,96 +10,96 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>false</rerunImmediately>
-   <testSuiteGuid>e54388e1-7cb1-400d-b54c-94998b7bba33</testSuiteGuid>
+   <testSuiteGuid>1882d318-b25e-41e4-8d07-f2974cba36c9</testSuiteGuid>
    <testCaseLink>
-      <guid>d91faf30-ee91-4890-a6bb-4f676b63c40c</guid>
+      <guid>b186bac0-f982-4e1e-bf73-bcd108eb956b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express -Positive Testing/SF-EXP-SUWP-00001</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>17f6ca60-84c1-4490-a266-2cfdb30926d6</guid>
+      <guid>f00c17e0-76cb-4d1f-bfad-6953528457c6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express -Positive Testing/SF-EXP-SUWP-00002</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>c4271779-cc48-4a1f-ba3c-aa6d8e347a1c</guid>
+      <guid>ea3108f8-3524-4617-b798-9b689071dfc6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express -Positive Testing/SF-EXP-SUWP-00003</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>35797738-75dd-4359-9e63-eeb7eaa3ec94</guid>
+      <guid>a2533fce-ade6-4c41-8f8b-a89d7817242e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express -Positive Testing/SF-EXP-SUWP-00004</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>b3db0783-202e-4eac-a9a6-98c242c048a3</guid>
+      <guid>879f311c-24b6-45d3-ae3a-e938ab6484f3</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express -Positive Testing/SF-EXP-SUWP-00005</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>4f168799-3190-4a6c-ae9e-211a4c0cea83</guid>
+      <guid>dcf62f11-917a-4531-badc-3a7956628ddf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express -Positive Testing/SF-EXP-SUWP-00010</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>2a3264e1-8153-4d1e-ae5f-8efd811cab19</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00025</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>4f6745a3-342f-4b38-bf09-f9eaa707dc64</guid>
+      <guid>4baa12df-b72e-447f-afe4-84e3a0dca85f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00026</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>c0d14a39-04c1-47e4-93bc-81667f848d6e</guid>
+      <guid>70c17aea-1fca-4bc5-943d-f88d8b862358</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00027</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>882f0233-14f4-41c4-9a43-a0baa62d95b2</guid>
+      <guid>399099fd-b9a4-48e4-ab94-845c3a72fa53</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00028</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>e9a8d977-bd57-4301-b75b-31001b1bae23</guid>
+      <guid>fcd5a639-6709-4b7a-8c47-57b3a63f391a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00029</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>acba5a95-ba1b-48e2-9de4-f5c6db292bb8</guid>
+      <guid>96bf93a3-5dbd-4938-9948-edb3a4c64582</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00030</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>dae85ac1-62dd-48bd-8d40-c575e77e5d63</guid>
+      <guid>c036724f-bd82-41dd-81b1-21d85057eff6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00035</testCaseId>
+      <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00031</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6846187f-6dd4-4558-bcf3-ae679a46d0d4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/SF Express - Boundary Testing/SF-EXP-SUWP-00036</testCaseId>
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

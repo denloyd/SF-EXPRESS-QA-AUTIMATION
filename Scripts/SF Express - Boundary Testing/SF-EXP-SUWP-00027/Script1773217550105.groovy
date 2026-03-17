@@ -20,6 +20,10 @@ import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.testobject.ConditionType
 import java.awt.Robot
 import java.awt.event.KeyEvent
+import com.kms.katalon.core.configuration.RunConfiguration
+
+String filePath = RunConfiguration.getProjectDir() + '/Data Files/SF-EXP-SUWP-00027v2.xlsx'
+String filePath1 = RunConfiguration.getProjectDir() + '/Data Files/SF-EXP-SUWP-00027.xlsx'
 
 WebUI.openBrowser('')
 WebUI.maximizeWindow()
@@ -36,9 +40,10 @@ def dynamicXPath = { String xpath ->
 
 WebUI.comment('TEST 1: HAWB exceeds enhancement requirement limit of 20 characters.')
 
-WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), 'NMM_User')
-WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'))
-WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), 'IMrpfjBbSL8n+osp8It7RQ==')
+WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), GlobalVariable.Username)
+
+WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), GlobalVariable.Password)
+
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Login'))
 
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Upload XLS'))
@@ -49,12 +54,11 @@ robot.delay(1000)
 robot.keyPress(KeyEvent.VK_ESCAPE)
 robot.keyRelease(KeyEvent.VK_ESCAPE)
 
-WebUI.uploadFile(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_uploadxls'),
-	'C:\\Users\\denlo\\OneDrive\\Desktop\\OJT Tasks\\OJT related tasks\\OJT MANUAL TESTING\\SF CHI\\SF-EXP-SUWP-00026v2.xlsx')
-WebUI.delay(3)
+WebUI.uploadFile(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_uploadxls'), filePath)
+WebUI.waitForElementClickable(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Save'), 10)
 
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Save'))
-WebUI.delay(2)
+
 
 // Check what happened after Save
 boolean test1ErrorPopup  = WebUI.waitForElementVisible(dynamicXPath("//div[@id='swal2-html-container']//li"), 5, FailureHandling.OPTIONAL)
@@ -67,7 +71,7 @@ if (test1SaveSuccess) {
 	WebUI.comment(' System should have rejected and displayed a proper error message.')
 	// Continue the flow since system saved
 	WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Proceed'))
-	WebUI.delay(2)
+	
 	
 } else if (test1ErrorPopup) {
 	String test1Message = WebUI.getText(dynamicXPath("//div[@id='swal2-html-container']//li")).trim()
@@ -90,9 +94,10 @@ WebUI.delay(5)
 WebUI.comment('TEST 2: HAWB exceeds current database max length of 50 characters.')
 
 WebUI.navigateToUrl('https://sf.ekonek.com/login')
-WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), 'NMM_User')
-WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'))
-WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), 'IMrpfjBbSL8n+osp8It7RQ==')
+WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), GlobalVariable.Username)
+
+WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), GlobalVariable.Password)
+
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Login'))
 
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Upload XLS'))
@@ -104,11 +109,11 @@ robot.keyPress(KeyEvent.VK_ESCAPE)
 robot.keyRelease(KeyEvent.VK_ESCAPE)
 
 WebUI.uploadFile(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_uploadxls'),
-	'C:\\Users\\denlo\\OneDrive\\Desktop\\OJT Tasks\\OJT related tasks\\OJT MANUAL TESTING\\SF CHI\\SF-EXP-SUWP-00026.xlsx')
-WebUI.delay(3)
+	filePath1)
+WebUI.waitForElementClickable(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Save'), 10)
 
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Save'))
-WebUI.delay(2)
+
 
 // Check what happened after Save
 boolean test2ErrorPopup  = WebUI.waitForElementVisible(dynamicXPath("//div[@id='swal2-html-container']//li"), 5, FailureHandling.OPTIONAL)
@@ -133,7 +138,7 @@ if (test2ErrorPopup) {
 	WebUI.comment(' BUG: System saved the data to the database instead of rejecting.')
 	WebUI.comment(' BUG: No error message was displayed.')
 	WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Proceed'))
-	WebUI.delay(2)
+	
 	
 }
 
@@ -152,5 +157,5 @@ WebUI.comment(test2ShowsOracleError
 		? 'FAILED: Upon saving, system rejects the uploaded file but it displays incorrect error message'
 		: ' PASS: System rejected with proper message')
 
-WebUI.delay(5)
+
 WebUI.closeBrowser()

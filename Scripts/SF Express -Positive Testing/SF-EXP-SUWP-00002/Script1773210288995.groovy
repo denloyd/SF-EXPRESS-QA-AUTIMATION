@@ -1,4 +1,5 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -25,8 +26,10 @@ import org.apache.poi.ss.usermodel.DataFormatter
 import java.io.FileInputStream
 import java.awt.Robot
 import java.awt.event.KeyEvent
+import com.kms.katalon.core.configuration.RunConfiguration
 
-String filePath = 'C:\\Users\\denlo\\OneDrive\\Desktop\\OJT Tasks\\OJT related tasks\\OJT MANUAL TESTING\\SF CHI\\SF-EXP-SUWP-00002.xlsx'
+String filePath = RunConfiguration.getProjectDir() + '/Data Files/SF-EXP-SUWP-00002.xlsx'
+
 
 
 WebUI.openBrowser('')
@@ -34,9 +37,9 @@ WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('https://sf.ekonek.com/login')
 
-WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), 'NMM_User')
+WebUI.setText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Username'), GlobalVariable.Username)
 
-WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), 'IMrpfjBbSL8n+osp8It7RQ==')
+WebUI.setEncryptedText(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_Password'), GlobalVariable.Password)
 
 WebUI.click(findTestObject('Page_e-Konek Apps - SF Status Uploader/button_Login'))
 
@@ -53,7 +56,6 @@ WebUI.uploadFile(findTestObject('Page_e-Konek Apps - SF Status Uploader/input_up
 
 WebUI.comment("Excel file uploaded")
 
-WebUI.delay(3)
 
 
 // Open the Excel file
